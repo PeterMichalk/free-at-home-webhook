@@ -1,0 +1,86 @@
+{
+  "name": "Webhook Bridge",
+  "version": "1.0.0",
+  "id": "tech.michalk.freeathome.webhook",
+  "license": "MIT",
+  "description": "Sendet bei Geräte- und Szenenereignissen HTTP-POST-Webhooks an konfigurierbare URLs – inkl. optionaler Auth-Header, Datapoint-Filtern und automatischem Retry.",
+  "url": "https://www.michalk.tech",
+  "author": "Peter Michalk",
+  "type": "app",
+  "entryPoint": "build/main.js",
+  "parameters": {
+      "default": {
+          "name": "Settings",
+          "items": {
+              "sysApUrl": {
+                  "name": "SysAP URL",
+                  "type": "string"
+              },
+              "username": {
+                  "name": "Username",
+                  "type": "string"
+              },
+              "password": {
+                  "name": "Password",
+                  "type": "string"
+              }
+          }
+      },
+      "sceneRules": {
+          "name": "Scene Webhook Rules",
+          "multiple": true,
+          "display": {
+              "title": "$sceneId",
+              "subtitle": "$webhookUrl"
+          },
+          "items": {
+              "sceneId": {
+                  "name": "Scene ID (leer = alle Szenen)",
+                  "type": "string"
+              },
+              "webhookUrl": {
+                  "name": "Webhook URL",
+                  "type": "string"
+              },
+              "authHeaderName": {
+                  "name": "Auth Header Name (z.B. Authorization)",
+                  "type": "string"
+              },
+              "authHeaderValue": {
+                  "name": "Auth Header Value (z.B. Bearer mytoken)",
+                  "type": "string"
+              }
+          }
+      },
+      "webhookRules": {
+          "name": "Webhook Rules",
+          "multiple": true,
+          "display": {
+              "title": "$deviceSerial",
+              "subtitle": "$webhookUrl"
+          },
+          "items": {
+              "deviceSerial": {
+                  "name": "Device Serial Number",
+                  "type": "string"
+              },
+              "webhookUrl": {
+                  "name": "Webhook URL",
+                  "type": "string"
+              },
+              "authHeaderName": {
+                  "name": "Auth Header Name (z.B. Authorization)",
+                  "type": "string"
+              },
+              "authHeaderValue": {
+                  "name": "Auth Header Value (z.B. Bearer mytoken)",
+                  "type": "string"
+              },
+              "datapointFilter": {
+                  "name": "Datapoint-Filter (PairingIds kommagetrennt, leer = alle)",
+                  "type": "string"
+              }
+          }
+      }
+  }
+}
