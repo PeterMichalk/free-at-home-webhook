@@ -1,6 +1,6 @@
 # Webhook Bridge
 
-**Webhook Bridge** is a [Busch-Jaeger free@home](https://www.busch-jaeger.de/free-at-home) add-on that sends **HTTP POST** requests to URLs you configure when:
+**Webhook Bridge** is a add-on that sends **HTTP POST** requests to URLs you configure when:
 
 - a monitored **device channel** reports an output datapoint change, and/or  
 - a **scene** is triggered (optional rules).
