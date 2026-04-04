@@ -22,7 +22,7 @@
               },
               "password": {
                   "name": "Password",
-                  "type": "string"
+                  "type": "password"
               }
           }
       },
